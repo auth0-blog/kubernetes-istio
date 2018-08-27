@@ -42,13 +42,13 @@ class Question extends Component {
         <div className="row">
           <div className="jumbotron col-12">
             <h1 className="display-3">{question.title}</h1>
-            <p className="lead">{question.description}</p>
+            <p className="lead">{question.description} - Asked by: {question.author}</p>
             <hr className="my-4" />
             <SubmitAnswer questionId={question.id} submitAnswer={this.submitAnswer} />
             <p>Answers:</p>
             {
               answers.map((answer, idx) => (
-                <p className="lead" key={idx}>{answer.answer}</p>
+                <p className="lead" key={idx}>{answer.answer} - Answered by: {answer.author}</p>
               ))
             }
           </div>
